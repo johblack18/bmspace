@@ -59,6 +59,8 @@ def on_connect(client, userdata, flags, reason_code, properties):
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
     client.subscribe("$SYS/#")
+    global mqtt_connected
+     mqtt_connected = True
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
@@ -83,26 +85,20 @@ mqttc.connect(config['mqtt_host'], config['mqtt_port'], 60)
 #    client.subscribe("$SYS/#")
 # The callback for when a PUBLISH message is received from the server.
 #def on_message(client, userdata, msg):
-#    print(msg.topic+" "+str(msg.payload))
-
-#mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
-#mqttc.on_connect = on_connect
-#mqttc.on_message = on_message
-
-    
+#    print(msg.topic+" "+str(msg.payload))  
 #    client.will_set(config['mqtt_base_topic'] + "/availability","offline", qos=0, retain=False)
 #    global mqtt_connected
 #    mqtt_connected = True
 
-#def on_disconnect(client, userdata, rc):
-#    print("MQTT disconnected with result code "+str(rc))
-#    global mqtt_connected
-#    mqtt_connected = False
+def on_disconnect(client, userdata, reason_code, properties):
+    print("MQTT disconnected with result code {reason_code}")
+    global mqtt_connected
+    mqtt_connected = False
 
 
-#client = mqtt.Client("bmspace")
-#client.on_connect = on_connect
-#client.on_disconnect = on_disconnect
+client = mqtt.Client("bmspace")
+client.on_connect = on_connect
+client.on_disconnect = on_disconnect
 
 #client.loop_start()
 time.sleep(2)
