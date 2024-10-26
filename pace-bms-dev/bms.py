@@ -75,7 +75,7 @@ mqttc.connect(config['mqtt_host'], config['mqtt_port'], 60)
 # handles reconnecting.
 # Other loop*() functions are available that give a threaded interface and a
 # manual interface.
-mqttc.loop_forever()
+#mqttc.loop_forever()
 
 
 #def on_connect(client, userdata, flags, reason_code):
