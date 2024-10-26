@@ -68,7 +68,7 @@ mqttc.on_message = on_message
 
     
     #mqttc.will_set(config['mqtt_base_topic'] + "/availability","offline", qos=0, retain=False)
-    global mqtt_connected
+    #global mqtt_connected
     mqtt_connected = True
 
 def on_disconnect(mqttc, userdata, reason_code):
