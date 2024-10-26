@@ -1,6 +1,6 @@
 
 
-import paho.mqtt.mqttc as mqtt
+import paho.mqtt.client as mqtt
 import socket
 import time
 import yaml
