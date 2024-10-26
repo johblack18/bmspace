@@ -1,6 +1,6 @@
 name: "BMS Pace - Multi bms"
 description: "Pace BMS Interface"
-version: "2.4dev"
+version: "2.5"
 slug: "bms_pace_multi"
 url: "https://github.com/johblack18/bmspace/blob/main/pace-bms-dev"
 init: false
