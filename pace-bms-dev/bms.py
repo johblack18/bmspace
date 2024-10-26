@@ -55,8 +55,18 @@ temps = 6
 
 print("Connection Type: " + connection_type)
 
-def on_connect(client, userdata, flags, rc):
-    print("MQTT connected with result code "+str(rc))
+def on_connect(client, userdata, flags, reason_code):
+    print(f"Connected with result code {reason_code}")
+    client.subscribe("$SYS/#")
+# The callback for when a PUBLISH message is received from the server.
+def on_message(client, userdata, msg):
+    print(msg.topic+" "+str(msg.payload))
+
+mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+mqttc.on_connect = on_connect
+mqttc.on_message = on_message
+
+    
     client.will_set(config['mqtt_base_topic'] + "/availability","offline", qos=0, retain=False)
     global mqtt_connected
     mqtt_connected = True
