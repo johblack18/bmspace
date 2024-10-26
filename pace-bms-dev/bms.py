@@ -96,9 +96,9 @@ def on_disconnect(client, userdata, reason_code, properties):
     mqtt_connected = False
 
 
-client = mqtt.Client("bmspace")
-client.on_connect = on_connect
-client.on_disconnect = on_disconnect
+#client = mqtt.Client("bmspace")
+#client.on_connect = on_connect
+#client.on_disconnect = on_disconnect
 
 #client.loop_start()
 time.sleep(2)
