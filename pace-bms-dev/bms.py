@@ -60,7 +60,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
     # reconnect then subscriptions will be renewed.
     client.subscribe("$SYS/#")
     global mqtt_connected
-     mqtt_connected = True
+    mqtt_connected = True
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
