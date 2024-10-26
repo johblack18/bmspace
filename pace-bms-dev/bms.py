@@ -69,12 +69,12 @@ mqttc.on_message = on_message
     
     #mqttc.will_set(config['mqtt_base_topic'] + "/availability","offline", qos=0, retain=False)
     #global mqtt_connected
-    mqtt_connected = True
+    #mqtt_connected = True
 
-def on_disconnect(mqttc, userdata, reason_code):
-    print("MQTT disconnected with result code "+str(reason_code))
+#def on_disconnect(mqttc, userdata, reason_code):
+    #print("MQTT disconnected with result code "+str(reason_code))
     #global mqtt_connected
-    mqtt_connected = False
+    #mqtt_connected = False
 
 
 mqttc = mqtt.mqttc("bmspace")
