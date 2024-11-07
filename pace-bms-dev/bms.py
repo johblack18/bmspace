@@ -70,7 +70,7 @@ mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.on_connect = on_connect
 mqttc.on_message = on_message
 
-mqttc.username_pw_set(username=config['mqtt_user'], password=config['mqtt_password'])
+#mqttc.username_pw_set(username=config['mqtt_user'], password=config['mqtt_password'])
 mqttc.connect(config['mqtt_host'], config['mqtt_port'], 60)
 
 # Blocking call that processes network traffic, dispatches callbacks and
