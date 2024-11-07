@@ -17,8 +17,8 @@ usb: true
 options:
   mqtt_host: "10.0.0.64"
   mqtt_port: 1887
-  #mqtt_user: "mqtt-users"
-  #mqtt_password: "mqtt-users"
+  mqtt_user: ""
+  mqtt_password: ""
   mqtt_ha_discovery: false
   mqtt_ha_discovery_topic: "homeassistant"
   mqtt_base_topic: "bmspace"
