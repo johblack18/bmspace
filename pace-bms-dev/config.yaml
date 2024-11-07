@@ -34,8 +34,8 @@ options:
 schema:
   mqtt_host: str
   mqtt_port: int
-  #mqtt_user: str
-  #mqtt_password: str
+  mqtt_user: str
+  mqtt_password: str
   mqtt_ha_discovery: bool
   mqtt_ha_discovery_topic: str
   mqtt_base_topic: str
